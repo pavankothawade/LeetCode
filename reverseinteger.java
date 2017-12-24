@@ -1,15 +1,24 @@
 
 public class reverseinteger {
 public static int reverse(int x){
-	int rev_num=0;
-	while(x>0) {
-		
-		rev_num= rev_num*10+ x%10;
-		x=x/10;
-	}
-	return rev_num;
+	 long k = x;
+     boolean isNegtive = false;        
+     if(k < 0){
+         k = 0 - k;
+         isNegtive = true;
+     }
+
+     long result = 0;
+     while(k != 0){
+         result *= 10;
+         result += k % 10;
+         k /= 10;
+     }
+
+     if(result > Integer.MAX_VALUE) return 0;
+     return isNegtive  ? 0 - ((int)result) : (int)result;
 }
 public static void main(String[] args) {
-	System.out.println(reverse(456));
+	System.out.println(reverse(-456));
 }
 }
