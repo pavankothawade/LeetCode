@@ -1,23 +1,26 @@
-import java.util.Scanner;
+package LeetCode;
 
-public class twosum {
- public static int[] twosum(int[] nums, int target) {
-	 for(int i=0;i<nums.length; i++) {
-		 for(int j=i+1;j<nums.length; j++) {
-			 if(nums[j]==target-nums[i]) {
-				 return new int[] {i,j};
-			 }
-		 }
-	 }
-	  return new int[] {};
-	 }
-public static void main(String[] args) {
-	int array[]= {1,2,3,4,5};
-	int number= 143;
-	
-	System.out.println();
-	
-	
-}
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class TwoSum {
+
+	public static void main(String[] args) {
+	int[] result= twoSum(new int[] {2,7,11,15}, 9);
+		System.out.println(Arrays.toString(result));
+
+	}
+	public static int [] twoSum(int[] a, int target) {
+		HashMap <Integer, Integer> hm= new HashMap<Integer, Integer>();
+		for(int i = 0; i< a.length; i++)
+		{
+			if(hm.containsKey(target- a[i]))
+			{
+				return new int[] {hm.get(target- a[i]), i};
+			}
+		hm.put(a[i], i);	
+		}
+		return new int[] {-1,-1};
+	}
 
 }
