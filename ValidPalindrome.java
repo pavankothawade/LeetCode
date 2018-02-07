@@ -17,7 +17,7 @@ System.out.println(isPalindrome("A man, a plan, a canal: Panama"));
 		 
 		 while(start < end) {
 			 if(!Character.isLetterOrDigit(s.charAt(start))) {
-				 start++;
+				start++;
 			 }else if(!Character.isLetterOrDigit(s.charAt(end))){
 				 end--;
 			 }else if(s.charAt(start) != s.charAt(end)) {
